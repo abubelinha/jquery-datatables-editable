@@ -1,0 +1,40 @@
+#summary Introduction to the JQuery DataTables Editable plugin.
+#labels Featured
+
+=Introduction=
+
+JQuery DataTables Editable plugin is a JQuery plugin that enhances standard HTML table and add data management functionalities (adding new records to the table, selecting and deleting records, and editing cells inline).
+
+All required processing is encaplulated within the plugin, and only required implementation is a server-side code that accepts add, update and delete requests. Server-side code can be implemented in any language (PHP, ASP.NET/C#, Java) as long as plugin interface requirements are met.
+
+=Details=
+
+JQuery DataTables Editable Plugin enables user to make the following actions in the table:
+ * Select and delete row in the table
+ * Edit cell values inline
+ * Add new row
+
+Plugin handles all necessary functionalities - only required implementation is server-side logic that handles AJAX requests sent by the plugin.
+
+==Selecting and deleting rows==
+JQuery DataTables Editable plugin enables user to select and delete rows in the table. When user press delete button, plugin creates an AJAX request to the server-side with information of the id of the record that is deleted.
+
+On the server-side, one page that handles delete AJAX requests that accepts one parameter (id) need to be created. A value of this parameter is placed as an id attribute of {{{<tr>}}} tag. Server-side page should return string "ok" if a record is successfully deleted or error message if delete failed. 
+
+==Editing cell values==
+Editing cell is done inline by clicking on the table cells. Whenuser finishes with editing AJAX request with cell position and cell value is sent to the server-side.
+
+One sever-side page that handles update AJAX requests need to be created. This page should accepts the following parameters:
+
+   * value - that contains text used entered in the table cell while editing
+   * id - id of the record that is deleted (id is placed in TR tag that surrounds the cell that has been edited)
+   * columnId - position of the column of the cell that has been edited (hidden columns are counted also)
+   * columnPosition - position of the column of the cell that has been edited (hidden columns are not counted)
+   * rowId - id of the row containing cell the cell that has been edited
+
+Server-side page should return value that is updated if cell is successfully updated on the server-side or an error message. 
+
+==Adding new rows==
+To enable adding new record you will need to create a custom HTML form  where a user can enter information about the new record. When user enter information about new record in the form, these will be posted to the server-side page.
+
+On the server-side one page that handles add AJAX requests need to be created. This page should accept input values entered in the form and return id of the new record. 
