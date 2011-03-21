@@ -3,25 +3,30 @@
 
 =Introduction=
 
-JQuery DataTables Editable plugin is a JQuery plugin that enhances standard HTML table and add data management functionalities (adding new records to the table, selecting and deleting records, and editing cells inline).
+JQuery !DataTables Editable plugin is a JQuery plugin that enhances standard HTML table and add data management functionalities (adding new records to the table, selecting and deleting records, and editing cells inline).
 
 All required processing is encaplulated within the plugin, and only required implementation is a server-side code that accepts add, update and delete requests. Server-side code can be implemented in any language (PHP, ASP.NET/C#, Java) as long as plugin interface requirements are met.
 This page contains short description explaining the features of the plugin. You can download complete example and see how it works.
 
 =Details=
 
-JQuery DataTables Editable Plugin enables user to make the following actions in the table:
+JQuery !DataTables Editable Plugin enables user to make the following actions in the table:
  * Select and delete row in the table
  * Edit cell values inline
  * Add new row
 
 Plugin handles all necessary functionalities - only required implementation is server-side logic that handles AJAX requests sent by the plugin.
 
-==HTML Source==
+=Implementation of clent-side web page=
+First step in the integration of JQuery !DataTables Editable plugin intp you application is implementation of the client-side page. Detailed instructions about implementation of client-side code can be found [HTMLSource here]. In this section is shown overview of implementation. There are two important elements that should be added to the client-side web page:
+ * HTML table that contains data,
+ * !JavaScript initialization code that enchances the table.
+
+==Table Source==
 This plugin works with a plain HTML table. Example of the HTML table is shown below:
 
 {{{
- <table id="myDataTable" class="display">
+ <table id="myDataTable">
         <thead>
             <tr>
                 <th>Company name</th>
@@ -56,8 +61,8 @@ This plugin works with a plain HTML table. Example of the HTML table is shown be
 
 As you can see standard HTML table need to be placed in the HTML source of the page. Only difference is that id of the each record need to be placed in the TR tags as an attribute.
 
-==Initializing JQuery DataTables Editable plugin==
-JQuery DataTables Editable plugin integrates several plugins that add different functionalities to the table. Most important plugin is JQuery DataTables plugin that adds filtering, ordering and pagination functionalities to the table. This plugin is built on the top of DataTables plugin and it adds additional data-management functionalities. JQuery DataTables Editable plugin is initialized using the following code:
+==Initializing JQuery !DataTables Editable plugin==
+JQuery !DataTables Editable plugin integrates several plugins that add different functionalities to the table. Most important plugin is JQuery !DataTables plugin that adds filtering, ordering and pagination functionalities to the table. This plugin is built on the top of !DataTables plugin and it adds additional data-management functionalities. JQuery !DataTables Editable plugin is initialized using the following code:
 
 {{{
         <script language="javascript" type="text/javascript">
@@ -67,16 +72,21 @@ JQuery DataTables Editable plugin integrates several plugins that add different 
         </script>
 }}}
 
-myDataTable is an id of the HTML table that should be enhanced. First, DataTables plugin is applied to add common table functionalities, and then this table is made editable using the plugin created in this project.
+myDataTable is an id of the HTML table that should be enhanced. First, !DataTables plugin is applied to add common table functionalities, and then this table is made editable using the plugin created in this project.
 
 =Implementation of the server-side pages=
 
-When the DataTables Editable plugin is initialized, server-side pages that handles data management need to be created. In the following sections is described what should be implemented on the server-side to make this plugin fully functional.
+When the !DataTables Editable plugin is initialized, it sends Update, Delete and Add requests to the server size. To accept these actions, server-side pages that handles data management requests need to be created. In the following sections is described what should be implemented on the server-side to make this plugin fully functional.
 
 ==Selecting and deleting rows==
-JQuery DataTables Editable plugin enables user to select and delete rows in the table. When user press delete button, plugin creates an AJAX request to the server-side with information of the id of the record that is deleted.
+JQuery !DataTables Editable plugin enables user to select and delete rows in the table. When user press delete button, plugin creates an AJAX request to the server-side with information of the id of the record that is deleted. Example of request that is sent to the server-side is:
 
-On the server-side, one page that handles delete AJAX requests that accepts one parameter (id) need to be created. A value of this parameter is placed as an id attribute of {{{<tr>}}} tag. Server-side page should return string "ok" if a record is successfully deleted or error message if delete failed. 
+{{{
+   http://www.site.com/folder/DataData?id=22
+}}}
+URL of the delete page can be chnaged in plugin configuration.  id value that is sent to the server-side is placed as an id attribute of {{{<tr>}}} tag.
+
+On the server-side, one page that handles delete AJAX requests that accepts one parameter (id) need to be created. Server-side page should return string "ok" if a record is successfully deleted or error message if delete failed. 
 
 ==Editing cell values==
 Editing cell is done inline by clicking on the table cells. Whenuser finishes with editing AJAX request with cell position and cell value is sent to the server-side.
