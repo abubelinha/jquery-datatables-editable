@@ -26,7 +26,7 @@ The libraries listed above should be downloaded and placed in the local site. Fo
 {{{
 
         <script src="/Scripts/jquery-1.4.4.min.js" type="text/javascript"></script>
-        <script src="/Scripts/jquery.!DataTables.min.js" type="text/javascript"></script>
+        <script src="/Scripts/jquery.DataTables.min.js" type="text/javascript"></script>
         <script src="/Scripts/jquery.jeditable.js" type="text/javascript"></script>
         <script src="/Scripts/jquery-ui.js" type="text/javascript"></script>
         <script src="/Scripts/jquery.validate.js" type="text/javascript"></script>
@@ -82,7 +82,7 @@ Example of the valid table is:
 JQuery !DataTables Editable plugin is initialized using the following code:
 
 {{{
-        <script language="!JavaScript" type="text/javascript">
+        <script language="JavaScript" type="text/javascript">
             $(document).ready(function () {
                 $('#myDataTable').dataTable().makeEditable();
             });
@@ -93,7 +93,7 @@ myDataTable is an id of the HTML table that should be enhanced. First, !DataTabl
 
 ==Add and delete buttons==
 
-Two buttons that will be used for add and delete actions must be added to the page so !DataTables Editable plugin can find them and attach the event handlers to them that will perform add and delete actions. Example of the buttons that should be added is:
+Two buttons that will be used for add and delete actions must be added to the page so !DataTables Editable plugin can find them and attach the event handlers that will perform add and delete actions. Example of the buttons that should be added is:
 
 {{{
 <button id="btnAddNewRow">Add</button>
@@ -139,5 +139,5 @@ To add new record completely custom blank form needs to be added to a page. Exam
 }}}
 
 
-Arbitrary fields can be placed within the form. A !DataTables Editable plugin will handle standard operations opening/closing form in the new dialog, sending AJAX request etc. 
-Only requirement is that some fields must be marketd with rel attribute. Rel attribute must have position of the cell where value of the input field should be placed if the add operation succeed. Any field in the form that should not be added in the table should not be mapped to the table with a rel attribute. 
+Arbitrary fields can be placed within the form. A !DataTables Editable plugin will handle standard operations opening/closing form in the new dialog, sending AJAX request when user confirm adding, etc. 
+Only requirement is that the fields that need to be copied back to the original table when update is performed must be marked with rel attribute. Rel attribute must have position of the cell where value of the input field should be placed if the add operation succeed. Any field in the form that should not be added in the table should not be mapped to the table with a rel attribute. 
