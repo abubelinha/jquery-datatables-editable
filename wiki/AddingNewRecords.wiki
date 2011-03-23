@@ -78,7 +78,7 @@ In the following sections are show examples of the server-side page implementati
 Example of the server-side page that can be implemented in PHP is shown below:
 {{{
 <?php
-  //UpdateData.php
+  //AddData.php
   $name = $_REQUEST['name'] ;
   $address = $_REQUEST['address'] ;
   $town = $_REQUEST['town'] ;
@@ -121,7 +121,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class EditCellHandler extends HttpServlet {
+public class AddDataHandler extends HttpServlet {
 
   public void doGet(HttpServletRequest request,
                     HttpServletResponse response)
