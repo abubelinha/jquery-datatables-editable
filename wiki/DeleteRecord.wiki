@@ -1,0 +1,19 @@
+#summary Implementation of delete functionality
+
+= Introduction =
+
+!DataTables Editable plugin enables user to select and delete the rows in the table. Delete button is always disabled but when user select any row in the table it becomes enabled and user can delete selected row by pressing it.
+
+
+= Client-side implementation =
+On the client-side page should be done following tasks in order to implement deleting rows.
+ * Delete button should be added to the page
+ * Setting the page that will handle delete requests
+
+== Adding Delete button ==
+
+
+
+= Server-side implementation =
+
+
