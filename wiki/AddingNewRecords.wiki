@@ -1,6 +1,8 @@
 #summary Implementation of add functionality
 #labels Phase-Implementation
 
+<wiki:toc max_depth="2" />
+
 = Introduction =
 
 !DataTables Editable plugin handles adding new records in the table. When user wants to add a new record plugin opens "Add new record" dialog where user can populate details of the new record. Example of the add new record form is shown below:
