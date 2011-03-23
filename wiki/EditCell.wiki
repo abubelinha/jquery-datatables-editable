@@ -1,0 +1,41 @@
+#summary Instruction how to setup editing of the cells in the table
+
+= Introduction =
+
+!DataTables Editable plugin enables user to edit the cells in the table. Updating cells is done by using inline editable plugin called JEditable. DataTables Editable plugin is internally configured to replace cell content with editable textbox when user double clicks on the cell. Folowing figure shows how user can edit data:
+
+http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/datatables_edit_cell.png
+
+When user finishes with editing AJAX call is sent to the server-side page that updates record.
+
+= Client-side configuration =
+
+On the client-side (web page) minimal configuration is required. In the plugin initialization call should be set URL of the page that updates data on the server-side and plugin will handle all other operations (inline editing, sending AJAX request, error handling).
+
+== Setting the server-side page used for update ==
+In the plugin initialization should be set parameter sUpdateURL which set the URL of the page that plugin should use for updating data. Example of call is shown below:
+
+{{{
+$('#myDataTable').dataTable().makeEditable({
+                    sUpdateURL: "/Home/UpdateData.php"
+                }); 
+}}}
+
+The AJAX call will be sent to the page /Home/UpdateData.php when user finishes with editing of the cell.
+
+== AJAX Request ==
+
+When user finishes with editing cell, an AJAX request will be sent to the URL defined in the sUpdateURL parameter, with the following values:
+ * id of the row taken from the id attribute of the <tr> tag that surrounds cell that has been edited. Use this value to find a record that should be updated.
+ * value that is entered in the cell.  This value should be written in the company record.
+ * columnName - name of the column (e.g. text found in the column heading). You can use this information to determine which property should be updated.
+ * rowId from the table.  If 10 rows are shown per page this will be value between 0 and 9.
+ * columnPosition position of the column value from 0 to the number of columns you see in the table - 1. Hidden columns are not counted. This value can be used instead of the column name to identify the property that should be updated. Use this value if names of the columns can be dynamically changed. 
+ * columnId id of the column from 0 to the total number of columns - 1. Hidden columns are counted. This value can be used instead of the column name to identify the property that should be updated.  You should use columnId instead of the columnPosition if you have hidden columns in the table (either initially hidden or dynamically hidden)
+
+= Server-side page implementation ==
+
+On the server-side one page that accepts parameters described in the previous section needs to be created. 
+
+
+
