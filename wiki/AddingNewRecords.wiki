@@ -1,6 +1,7 @@
 #summary Implementation of add functionality
 #labels Phase-Implementation
 
+= Table of content =
 <wiki:toc max_depth="2" />
 
 = Introduction =
