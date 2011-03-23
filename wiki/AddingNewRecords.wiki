@@ -5,7 +5,7 @@
 
 !DataTables Editable plugin handles adding new records in the table. When user wants to add a new record plugin opens "Add new record" dialog where user can populate details of the new record. Example of the add new record form is shown below:
 
-<img src"http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/datatables_add_new.png" />
+http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/datatables_add_new.png
 
 When a user submits the changes, plugin creates one AJAX request to the server-side page and if update is successful, a record will be added in the table.
 
