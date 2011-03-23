@@ -50,7 +50,9 @@ Example of the server-side page that can be implemented in PHP is shown below:
   $value = $_REQUEST['value'] ;
   $column = $_REQUEST['columnName'] ;
 
-  /* Update a record using information about id, columnName (property of the object or column in the table) and value that should be set */ 
+  /* Update a record using information about id, columnName (property
+     of the object or column in the table) and value that should be
+     set */ 
   echo $value;
 
 ?>
@@ -63,7 +65,9 @@ Example of the server side page that can be implemented in the ASP.NET MVC using
 {{{
 public class HomeController : Controller
 {        
-        public string UpdateData(int id, string value, int? rowId, int? columnPosition, int? columnId, string columnName)
+        public string UpdateData(   int id, string value, 
+                                    int? rowId, int? columnPosition,
+                                    int? columnId, string columnName)
         {
             //Add code to update cell
             return value;
