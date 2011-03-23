@@ -1,5 +1,8 @@
 #summary Instruction how to setup editing of the cells in the table
 
+= Table of content =
+<wiki:toc max_depth="2" />
+
 = Introduction =
 
 !DataTables Editable plugin enables user to edit the cells in the table. Updating cells is done by using inline editable plugin called JEditable. DataTables Editable plugin is internally configured to replace cell content with editable textbox when user double clicks on the cell. Folowing figure shows how user can edit data:
