@@ -38,7 +38,7 @@ AJAX request contains the following values:
 
 = Server-side page implementation =
 
-On the server-side one page that accepts parameters described in the previous section needs to be created. Server-side page should accept these parameters and update record in the database
+On the server-side one page that accepts parameters described in the previous section needs to be created. Server-side page should accept these parameters and update record in the database. In the sections below are shown short examples of implementation ih PHP, ASP.NET MVC. and Java
 
 == PHP Example ==
 
@@ -46,6 +46,7 @@ Example of the server-side page that can be implemented in PHP is shown below:
 
 {{{
 <?php
+  //UpdateData.php
   $id = $_REQUEST['id'] ;
   $value = $_REQUEST['value'] ;
   $column = $_REQUEST['columnName'] ;
@@ -60,6 +61,7 @@ Example of the server-side page that can be implemented in PHP is shown below:
 
 ?>
 }}}
+Plugin should be initialized with sUpdateURL parameter with value /!UpdateData.php in order to send request to the !UpdateData.php page.
 
 == ASP.NET MVC Example ==
 
@@ -77,6 +79,8 @@ public class HomeController : Controller
         } 
 } 
 }}}
+
+Plugin should be initialized with sUpdateURL parameter with value /Home/!UpdateData in order to map request to the !UpdateData method of the HomeController.
 
 == Java Example ==
 
