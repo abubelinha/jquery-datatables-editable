@@ -42,7 +42,7 @@ Confirmation and cancel button do not need to be added in the form - they will b
 
 Form can have more elements that a table columns. To map the values in the form with the columns in the table, each element that matches the table columns must have a rel attribute. Rel attributes of the elements must match the column positions in the table. If the records is successfully added on the server-side, plugin will take all elements that have rel attribute and place them in the table using the rel attributes as a column positions. In the example above id, name, address and country will be added as cells 0, 1, 2, and 3 in the original table.
 
-== Add new record buttons ==
+== Add new record button ==
 
 The button that will be used for opening add new record form should be added to the page. Any style/class can be added to the button - only requirement is that id of the button should be btnAddNewRow. Example of the button is:
 
@@ -61,12 +61,17 @@ $('#myDataTable').dataTable().makeEditable({
                 }); 
 }}}
 
-= Server side implementation =
+= Server-side page implementation =
 
 Server side page that handles "add new record" AJAX request should read values from request sent by plugin, add new record and return back id of the record that is created.
 If delete fails, this page should return error with some error status. Body of the response will be shown to the user as a error message. 
 
 =Customization=
+
+In the add process following elements can be configured:
+ * Default id of the "Add new record" form can be changed
+ * Default id of the "Add new record" button can be changed
+ * Ok and cancel buttons in the add new record dialog can be customized.
 
 ==Specifying id of the add new record form==
 By default, and "Add new record" form must have id "formAddNewRow" because plugin tries to find form with that id and show it in the dialog. This might be problem if there are more than one tables in the same page with different "Add new record" forms. In that case there will be collision between these forms because they will have same id.
@@ -104,5 +109,4 @@ $('#myDataTable').dataTable().makeEditable({
 
 }}}
 
-This initialization code instructs the plugin to find confirm and delete buttons by these ids instead of the default values. This might be useful if you have more than one add new record form with different buttons on the same page, and each of these pairs of buttons should have different ids.
-
+This initialization code instructs the plugin to find confirm and delete buttons by these ids instead of the default values. This might be useful if you have more than one "Add new record" form with different buttons on the same page, and each of these pairs of buttons should have different ids.
