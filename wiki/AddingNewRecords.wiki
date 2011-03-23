@@ -71,7 +71,78 @@ $('#myDataTable').dataTable().makeEditable({
 = Server-side page implementation =
 
 Server side page that handles "add new record" AJAX request should read values from request sent by plugin, add new record and return back id of the record that is created.
-If delete fails, this page should return error with some error status. Body of the response will be shown to the user as a error message. 
+If adding new record fails, this page should return error with some error status. Body of the response will be shown to the user as a error message.
+In the following sections are show examples of the server-side page implementation in the PHP, ASP.NET MVC, and Java.
+
+== PHP Example ==
+Example of the server-side page that can be implemented in PHP is shown below:
+{{{
+<?php
+  //UpdateData.php
+  $name = $_REQUEST['name'] ;
+  $address = $_REQUEST['address'] ;
+  $town = $_REQUEST['town'] ;
+  $country = $_REQUEST['country'] ;
+
+  $id = 0;
+
+  /* Add new record and place id of the new record into the $id variable */ 
+  echo $id;
+
+?>
+}}}
+Plugin should be initialized with sAddURL parameter with value "/AddData.php" in order to send request to the AddData.php page.
+
+== C# Example ==
+
+Example of the server side page that can be implemented in the ASP.NET MVC using C# language is shown below:
+{{{
+
+public class CompanyController : Controller
+{
+        public int AddData(	string name, string address, 
+				string town, int country)
+        {
+            int id;
+	    /* Add new record and place id of the new record into the id variable */
+            return id;
+        }
+}
+
+}}}
+
+Plugin should be initialized with sAddURL parameter with value /Company/!AddData in order to map request to the !AddData method of the !CompanyController.
+
+== Java Example ==
+
+Example of the Java Servlet that handles request is shown below:
+{{{
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class EditCellHandler extends HttpServlet {
+
+  public void doGet(HttpServletRequest request,
+                    HttpServletResponse response)
+      throws ServletException, IOException {
+
+     String name = request.getParameter("name");
+     String address = request.getParameter("address");
+     String town = request.getParameter("town");
+     String country = request.getParameter("country");
+
+     int id;
+     /*  Add new record and place id of the new record into the $id variabled */
+
+     PrintWriter out = response.getWriter();
+     out.println(id);
+  }
+}
+}}}
+
+== Summary ==
+In the examples above it can be noticed that server-side pages looks same. They accepting parameters, add record and return back id of the created record. Interface is same in all implementations only difference is in the business logic that creates new records.
 
 =Customization=
 
