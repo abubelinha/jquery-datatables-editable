@@ -26,7 +26,7 @@ The AJAX call will be sent to the page /Home/UpdateData.php when user finishes w
 == AJAX Request ==
 
 When user finishes with editing cell, an AJAX request will be sent to the URL defined in the sUpdateURL parameter, with the following values:
- * id of the row taken from the id attribute of the <tr> tag that surrounds cell that has been edited. Use this value to find a record that should be updated.
+ * id of the row taken from the id attribute of the TR tag that surrounds cell that has been edited. Use this value to find a record that should be updated.
  * value that is entered in the cell.  This value should be written in the company record.
  * columnName - name of the column (e.g. text found in the column heading). You can use this information to determine which property should be updated.
  * rowId from the table.  If 10 rows are shown per page this will be value between 0 and 9.
@@ -36,6 +36,4 @@ When user finishes with editing cell, an AJAX request will be sent to the URL de
 = Server-side page implementation ==
 
 On the server-side one page that accepts parameters described in the previous section needs to be created. 
-
-
 
