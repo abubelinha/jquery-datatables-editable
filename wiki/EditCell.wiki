@@ -36,6 +36,37 @@ AJAX request contains the following values:
  * columnPosition position of the column value from 0 to the number of columns you see in the table - 1. Hidden columns are not counted. This value can be used instead of the column name to identify the property that should be updated. Use this value if names of the columns can be dynamically changed. 
  * columnId id of the column from 0 to the total number of columns - 1. Hidden columns are counted. This value can be used instead of the column name to identify the property that should be updated.  You should use columnId instead of the columnPosition if you have hidden columns in the table (either initially hidden or dynamically hidden)
 
-= Server-side page implementation ==
+= Server-side page implementation =
 
-On the server-side one page that accepts parameters described in the previous section needs to be created. 
+On the server-side one page that accepts parameters described in the previous section needs to be created. Server-side page should accept these parameters and update record in the database
+
+== PHP Example ==
+
+Example of the server-side page that can be implemented in PHP is shown below:
+
+{{{
+<?php
+  $id = $_REQUEST['id'] ;
+  $value = $_REQUEST['value'] ;
+  $column = $_REQUEST['columnName'] ;
+
+  /* Update a record using information about id, columnName (property of the object or column in the table) and value that should be set */ 
+  echo $value;
+
+?>
+}}}
+
+== ASP.NET MVC Example ==
+
+Example of the server side page that can be implemented in the ASP.NET MVC using C# language is shown below:
+
+{{{
+public class HomeController : Controller
+{        
+        public string UpdateData(int id, string value, int? rowId, int? columnPosition, int? columnId, string columnName)
+        {
+            //Add code to update cell
+            return value;
+        } 
+} 
+}}}
