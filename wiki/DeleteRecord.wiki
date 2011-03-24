@@ -1,9 +1,9 @@
 #summary Implementation of delete functionality
-
+= Table of Content =
+<wiki:toc max_depth="2" />
 = Introduction =
 
 !DataTables Editable plugin enables user to select and delete the rows in the table. Delete button is always disabled but when user select any row in the table it becomes enabled and user can delete selected row by pressing it.
-
 
 = Client-side implementation =
 On the client-side page should be done following tasks in order to implement deleting rows.
@@ -12,8 +12,74 @@ On the client-side page should be done following tasks in order to implement del
 
 == Adding Delete button ==
 
+Delete button that will be used by the user to delete rows must be manually placed in the page. Only requirement is that delete button must have an id "btnDeleteRow". Example of the delete button is shown in the following example:
+{{{
+<button id="btnDeleteRow">Add</button>
+}}} 
+Position and style of the button can be changed.
 
+== Setting the server-side page ==
 
+In the plugin initialization call should be set parameter sDeleteURL, that is used to define what server-side page should be used for submitting the add AJAX request. Example of the initialization code is shown below:
+{{{
+$('#myDataTable').dataTable().makeEditable({
+                    sDeleteURL: "/Home/AddData.php"
+                }); 
+}}}
 = Server-side implementation =
+Server side page that handles "delete record" AJAX request should read id from the request sent by plugin, delete the record by id and return back string "ok". If deleting of the record fails, this page should return error text - any text different than "ok" will be shown to the user as an error message. In the following sections are show examples of the server-side page implementation in the PHP, ASP.NET MVC, and Java.
 
+PHP Example
+Example of the server-side page that can be implemented in PHP is shown below:
+{{{
+<?php
+  //DeleteData.php
+  $id = $_REQUEST['id'] ;
 
+  /* Delete a record by id */ 
+
+  echo "ok";
+
+?>
+}}}
+Plugin should be initialized with sDeleteURL parameter with value "/!DeleteData.php" in order to send request to the !Delete.php page.
+
+C# Example
+Example of the server side page that can be implemented in the ASP.NET MVC using C# language is shown below:
+{{{
+public class CompanyController : Controller
+{
+        public string DeleteData(int id)
+        {
+            /* Delete a record by id */
+
+            return "ok";
+        }
+}
+}}}
+Plugin should be initialized with sDeleteURL parameter with value /Company/!DeleteData in order to map request to the !DeleteData method of the !CompanyController.
+
+== Java Example ==
+Example of the Java Servlet that handles request is shown below:
+{{{
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class DeleteDataHandler extends HttpServlet {
+
+  public void doGet(HttpServletRequest request,
+                    HttpServletResponse response)
+      throws ServletException, IOException {
+
+     String id = request.getParameter("id");
+
+     /*  Delete a record by id */
+
+     PrintWriter out = response.getWriter();
+     out.println("ok");
+  }
+}
+}}}
+== Summary ==
+In the examples above it can be noticed that server-side pages looks same. They accepting parameters, add record and return back id of the created record. Interface is same in all implementations only difference is in the business logic that creates new records.
