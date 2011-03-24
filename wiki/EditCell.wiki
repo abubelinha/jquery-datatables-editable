@@ -1,5 +1,5 @@
 #summary Instruction how to setup editing of the cells in the table
-
+[../.. Home]
 = Table of content =
 <wiki:toc max_depth="2" />
 
@@ -40,13 +40,10 @@ AJAX request contains the following values:
  * columnId id of the column from 0 to the total number of columns - 1. Hidden columns are counted. This value can be used instead of the column name to identify the property that should be updated.  You should use columnId instead of the columnPosition if you have hidden columns in the table (either initially hidden or dynamically hidden)
 
 = Server-side page implementation =
-
 On the server-side one page that accepts parameters described in the previous section needs to be created. Server-side page should accept these parameters and update record in the database. In the sections below are shown short examples of implementation ih PHP, ASP.NET MVC, and Java
 
 == PHP Example ==
-
 Example of the server-side page that can be implemented in PHP is shown below:
-
 {{{
 <?php
   //UpdateData.php
@@ -119,3 +116,6 @@ public class Home extends HttpServlet {
 
 == Summary ==
 In the examples above it can be noticed that server-side pages looks same. They accepting parameters, update records and return back value that is edited. Interface is same in all implementations only difference is in the business logic code that updates the data.
+= See also =
+ * [AddingNewRecords Adding new record]
+ * [DeleteRecord Deleting records in the table]
