@@ -29,7 +29,7 @@ $('#myDataTable').dataTable().makeEditable({
 = Server-side implementation =
 Server side page that handles "delete record" AJAX request should read id from the request sent by plugin, delete the record by id and return back string "ok". If deleting of the record fails, this page should return error text - any text different than "ok" will be shown to the user as an error message. In the following sections are show examples of the server-side page implementation in the PHP, ASP.NET MVC, and Java.
 
-PHP Example
+== PHP Example ==
 Example of the server-side page that can be implemented in PHP is shown below:
 {{{
 <?php
@@ -44,7 +44,7 @@ Example of the server-side page that can be implemented in PHP is shown below:
 }}}
 Plugin should be initialized with sDeleteURL parameter with value "/!DeleteData.php" in order to send request to the !Delete.php page.
 
-C# Example
+== C# Example ==
 Example of the server side page that can be implemented in the ASP.NET MVC using C# language is shown below:
 {{{
 public class CompanyController : Controller
