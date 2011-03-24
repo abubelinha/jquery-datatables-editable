@@ -14,16 +14,16 @@ On the client-side page should be done following tasks in order to implement del
 
 Delete button that will be used by the user to delete rows must be manually placed in the page. Only requirement is that delete button must have an id "btnDeleteRow". Example of the delete button is shown in the following example:
 {{{
-<button id="btnDeleteRow">Add</button>
+<button id="btnDeleteRow">Delete</button>
 }}} 
-Position and style of the button can be changed.
+Position, style and text of the button can be changed. Only requirement it that id must be id="btnDeleteRow" because plugin finds the delete button be this id.
 
 == Setting the server-side page ==
 
 In the plugin initialization call should be set parameter sDeleteURL, that is used to define what server-side page should be used for submitting the add AJAX request. Example of the initialization code is shown below:
 {{{
 $('#myDataTable').dataTable().makeEditable({
-                    sDeleteURL: "/Home/AddData.php"
+                    sDeleteURL: "/Home/DeleteData.php"
                 }); 
 }}}
 = Server-side implementation =
@@ -83,3 +83,13 @@ public class DeleteDataHandler extends HttpServlet {
 }}}
 == Summary ==
 In the examples above it can be noticed that server-side pages looks same. They accepting parameters, add record and return back id of the created record. Interface is same in all implementations only difference is in the business logic that creates new records.
+
+= Customization =
+
+== Changing id of the delete button ==
+Id attribute of the button can be configured. Following code is used to define custom id of the delete button:
+
+$('#myDataTable').dataTable().makeEditable({
+                        btnDeleteRow: "btnDeleteCompany"
+                }); 
+In this case, a delete button must have a "btnDeleteCompany" id.
