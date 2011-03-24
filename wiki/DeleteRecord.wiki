@@ -88,8 +88,9 @@ In the examples above it can be noticed that server-side pages looks same. They 
 
 == Changing id of the delete button ==
 Id attribute of the button can be configured. Following code is used to define custom id of the delete button:
-
+{{{
 $('#myDataTable').dataTable().makeEditable({
                         btnDeleteRow: "btnDeleteCompany"
-                }); 
+                });
+}}}
 In this case, a delete button must have a "btnDeleteCompany" id.
