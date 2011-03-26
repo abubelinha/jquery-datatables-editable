@@ -1,5 +1,5 @@
 #summary Implementation of delete functionality
-[../.. Home]
+*[Overview]* > Deleting rows in the table
 = Table of Content =
 <wiki:toc max_depth="2" />
 = Introduction =
