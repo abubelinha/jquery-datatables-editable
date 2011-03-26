@@ -1,5 +1,5 @@
 #summary Introduction to the JQuery DataTables Editable plugin.
-#labels Featured
+#labels Deprecated
 
 =Introduction=
 
