@@ -1,5 +1,5 @@
 #summary Instruction how to setup editing of the cells in the table
-[../.. Home]
+*[Overview]* > Editing cells
 = Table of content =
 <wiki:toc max_depth="2" />
 
