@@ -3,8 +3,7 @@
 
 = Introduction =
 
-JQuery DataTables Editable plugin enables developers to quick and easy set the validatons on the individual cell editors.
+JQuery !DataTables Editable plugin enables developers to quick and easy set the validatons on the individual cell editors.
 
 
 = Details =
-
