@@ -1,6 +1,17 @@
 #summary Overview of the functionalities provided by the DataTables Editable plugin
 #labels Phase-Requirements
 
+=Site content=
+ * [HTMLSource HTML code]
+ * [EditCell Editing cells]
+  * [CustomCellEditors Custom cell editors]
+  * [CellEditorValidation Validating cell editor inputs]
+ * [AddingNewRecords Adding new records]
+ * [DeleteRecord Deleting rows]
+ * [Customization Customization/API]
+  * [CustomMessages Custom messages]
+  * [Events Events]
+
 = Introduction =
 
 JQuery !DataTables Editable plugin enhances standard HTML table by adding data management functionalities (adding new records to the table, selecting and deleting records, and editing cells inline) on the client-side. Look of the HTML table when JQuery !DataTables Editable plugin is applied is shown below:
@@ -114,4 +125,3 @@ To enable adding new record you will need to create a custom HTML form  where a 
 
 On the server-side one page that handles add AJAX requests need to be created. This page should accept input values entered in the form and return id of the new record. 
 Detailed information about adding new records using !DataTables Editable plugin can be found [AddingNewRecords here]. 
-
