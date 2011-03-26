@@ -96,5 +96,6 @@ $('#myDataTable').dataTable().makeEditable({
 }}}
 In this case, a delete button must have a "btnDeleteCompany" id.
 = See also =
+ * [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html Live demo]
  * [AddingNewRecords Adding new record]
  * [EditCell Editing cells in the table]
