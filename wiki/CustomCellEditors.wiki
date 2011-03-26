@@ -1,0 +1,9 @@
+#summary Implementation
+*[Overview]* > *[EditCell Editing cells]* > Custom cell editors
+= Introduction =
+
+Text box is default cell editor, however, JEditable plugin that is used for editing provides other editor types.  
+
+
+= Details =
+
