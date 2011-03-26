@@ -1,9 +1,8 @@
 #summary JQuery Editable plugin customization
-
+*[Overview]* > Customization/API
 = Introduction =
 
 JQuery !DataTables Editable plugin enables developers to customize functionalities, modify behaviour of the plugin, and attach events to the plugin.
-
 
 = Details =
 
@@ -11,7 +10,5 @@ JQuery !DataTables Editable plugin enables developers to customize functionaliti
  * Attaching events to the add, delete, and update actions,
  * Customizing functions that are called before and after AJAX call are performed,
  * Customization of user interface and HTML code that is used on the web page,
- * Customization of the error message handlers
+ * Customization of the error message handlers.
  
-
-
