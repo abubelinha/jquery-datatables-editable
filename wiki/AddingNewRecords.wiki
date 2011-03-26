@@ -16,7 +16,7 @@ When a user submits the changes, plugin creates one AJAX request to the server-s
 
 = Client side implementation =
 
-On the client side in the web page should be added following elements:
+Client side page should be created according to the [HTMLSource guideline for the web page implementation]. On the client side in the web page should be added following elements:
  * Form that will be used for adding new records
  * Button that will open this form
  * In the plugin configuration should be set what server-side page will handle add new record AJAX call.
