@@ -1,7 +1,7 @@
 #summary Implementation of add functionality
 #labels Phase-Requirements
 
-*[Overview]* *Adding new records*
+*[Overview]* > Adding new records
 
 = Table of content =
 <wiki:toc max_depth="2" />
