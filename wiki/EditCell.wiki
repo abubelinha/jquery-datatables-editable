@@ -1,4 +1,4 @@
-#summary Instruction how to setup editing of the cells in the table
+#summary Setup editing of the cells in the table
 *[Overview]* > Editing cells
 = Table of content =
 <wiki:toc max_depth="2" />
@@ -37,7 +37,7 @@ AJAX request contains the following values:
  * columnName - name of the column (e.g. text found in the column heading). You can use this information to determine which property should be updated.
  * rowId from the table.  If 10 rows are shown per page this will be value between 0 and 9.
  * columnPosition position of the column value from 0 to the number of columns you see in the table - 1. Hidden columns are not counted. This value can be used instead of the column name to identify the property that should be updated. Use this value if names of the columns can be dynamically changed. 
- * columnId id of the column from 0 to the total number of columns - 1. Hidden columns are counted. This value can be used instead of the column name to identify the property that should be updated.  You should use columnId instead of the columnPosition if you have hidden columns in the table (either initially hidden or dynamically hidden)
+ * columnId id of the column from 0 to the total number of columns - 1. Hidden columns are counted. This value can be used instead of the column name to identify the property that should be updated.  You should use columnId instead of the columnPosition if you have hidden columns in the table (either initially hidden or dynamically hidden). On the [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html live demo page] can be seen plugin in action. Note that edit action returns server error because google.code site do not allow POST request.
 
 = Server-side page implementation =
 On the server-side one page that accepts parameters described in the previous section needs to be created. Server-side page should accept these parameters and update record in the database. In the sections below are shown short examples of implementation ih PHP, ASP.NET MVC, and Java
@@ -117,6 +117,7 @@ public class Home extends HttpServlet {
 == Summary ==
 In the examples above it can be noticed that server-side pages looks same. They accepting parameters, update records and return back value that is edited. Interface is same in all implementations only difference is in the business logic code that updates the data.
 = See also =
+ * [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html Demo] - Live demo page. Note that edit action returns server error because google.code site do not allow POST request.
  * [AddingNewRecords Adding new record] - How to implement adding new rows in the table,
  * [DeleteRecord Deleting records in the table] - How to implement deleting rows from the table,
  * [CustomCellEditors Custom cell editors] - How to set different types of editors (dropdowns, text areas) on the table columns,
