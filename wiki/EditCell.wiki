@@ -13,7 +13,7 @@ When user finishes with editing AJAX call is sent to the server-side page that u
 
 = Client-side configuration =
 
-On the client-side (web page) minimal configuration is required. In the plugin initialization call should be set URL of the page that updates data on the server-side and plugin will handle all other operations (inline editing, sending AJAX request, error handling).
+On the client-side (web page) minimal configuration is required. In the plugin initialization call should be set URL of the page that updates data on the server-side and plugin will handle all other operations (inline editing, sending AJAX request, error handling). Only requirement is that web page should be created according to the [HTMLSource guideline for the web page implementation]. 
 
 == Setting the server-side page used for update ==
 In the plugin initialization should be set parameter sUpdateURL which set the URL of the page that plugin should use for updating data. Example of call is shown below:
