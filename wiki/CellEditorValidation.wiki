@@ -5,5 +5,26 @@
 
 JQuery !DataTables Editable plugin enables developers to quick and easy set the validatons on the individual cell editors.
 
+!DataTable Editable plugin supports validation for inline editing. In the aoColumns settings we can define what CSS class should be aplied to the particular cells during editing,as it is shown in the following example:
+{{{
+$('#example').dataTable().makeEditable({
+    sUpdateURL: "UpdateData.php",
+    "aoColumns": [
+                    null,
+                    {
+                    },
+                    {
+                    	cssclass: "required"
+                    },
+                    {
+                    	cssclass: "email"
+                    },
+                    {
+                    	cssclass: "date"
+                    }
+		]
+});
+}}}
 
-= Details =
+These classes are used for validation of input values before cell is updated. Validation classes that can be used are the same classes that are used in <a href="http://docs.jquery.com/Plugins/Validation">JQuery validation plugin</a> so please reffer to the documentation of his plugin for any customization.
+On the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-validation.html live demo page] can be seen how inline validation works/
