@@ -1,6 +1,6 @@
 #summary HTML Source code that should be placed in the web page.
 #labels Phase-Requirements
-
+*[Overview]* > Client-side HTML source
 = Introduction =
 
 Web page where the !DataTables Editable plugin is used must be build according to the plugin requirements. On this page is described what need to be placed on the client web page in order to run !DataTables Editable plugin correctly.
