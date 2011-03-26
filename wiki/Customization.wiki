@@ -4,11 +4,9 @@
 
 JQuery !DataTables Editable plugin enables developers to customize functionalities, modify behaviour of the plugin, and attach events to the plugin.
 
-= Details =
-
 !DataTables Editable plugin provides API for customisation of default functionalites. Functionalities that can be modified are:
- * Attaching events to the add, delete, and update actions,
- * Customizing functions that are called before and after AJAX call are performed,
- * Customization of user interface and HTML code that is used on the web page,
- * Customization of the error message handlers.
+ * Attaching events to the add, delete, and update actions. See [http://jquery-datatables-editable.googlecode.com/svn/trunk/events.html live demo] for details.
+ * Customizing functions that are called before and after AJAX call are performed. See [http://jquery-datatables-editable.googlecode.com/svn/trunk/events.html live demo] for details.
+ * Customization of user interface and HTML code that is used on the web page. See [http://jquery-datatables-editable.googlecode.com/svn/trunk/customization.html live demo] for details.
+ * Customization of the error message handlers. See [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-messages.html live demo] for details.
  
