@@ -1,0 +1,9 @@
+#summary DataTables Editable Live Demo
+
+= Introduction =
+
+In this section can be found live examples of the JQuery !DataTables Editable plugin usage. 
+Demo site contains the following examples:
+  * [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html Basic Example] Basic example showing how rows in the table can be selected, deleted and edited
+  * [http://jquery-datatables-editable.googlecode.com/svn/trunk/addingrecords.html Adding records] Example where is shown how the new records can be added
+  
