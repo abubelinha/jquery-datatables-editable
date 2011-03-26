@@ -9,8 +9,6 @@
  * [AddingNewRecords Adding new records]
  * [DeleteRecord Deleting rows]
  * [Customization Customization/API]
-  * [CustomMessages Custom messages]
-  * [Events Events]
 
 = Introduction =
 
