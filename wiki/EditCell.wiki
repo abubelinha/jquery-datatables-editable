@@ -25,6 +25,19 @@ $('#myDataTable').dataTable().makeEditable({
 }}}
 
 The AJAX call will be sent to the page /Home/!UpdateData.php when user finishes with editing of the cell.
+Instead of the URL function can be used as a target for posting values. This is shown in the example:
+
+{{{
+$('#myDataTable').dataTable().makeEditable({
+                    sUpdateURL: function(value, settings)
+				{
+					return(value);
+				}
+                });
+}}}
+
+This function accepts value that is entered in the editor, and settings of the current editor. Function should return the same value that is posted - any other text will be shown as a error message.
+Use this option then you need to implement some custom processing of the value before it is sent using some custom AJAX call.
 
 == AJAX Request ==
 
