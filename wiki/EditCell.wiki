@@ -36,8 +36,8 @@ $('#myDataTable').dataTable().makeEditable({
                 });
 }}}
 
-This function accepts value that is entered in the editor, and settings of the current editor. Function should return the same value that is posted - any other text will be shown as a error message.
-Use this option then you need to implement some custom processing of the value before it is sent using some custom AJAX call.
+This function accepts value that is entered in the editor, and settings of the current editor. Function should return the same value that is posted - any other text will be shown as an error message.
+Use this option when you need to implement some custom processing of the value before it is sent using some custom AJAX call.
 
 == AJAX Request ==
 
