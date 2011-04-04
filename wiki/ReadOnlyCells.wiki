@@ -32,8 +32,7 @@ To mark cell as read-only class "read_only" should be added to the <td> tag that
                 </tr>
         </tbody>
 </table>
-
 }}}
+
 In this example 1^st^, 3^rd^, and 5^th^ cells in the table are marked as read-only. Therefore, clicking on these cellseditor will not be shown.
 You can use these classes to make entire rows or columns read-only - just generate "read_only" class to the cells you want to make non-editable. You can see how read-only cells are cofigured on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html live demo] page 
-
