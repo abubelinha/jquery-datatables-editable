@@ -8,7 +8,7 @@ Editable plugin enables you to mark some of the cells in the table as a read-onl
 = Details =
 
 == Mark cells as read-only ==
-To mark cell as read-only class "read_only" should be added to the <td> tag that contains read-only text. Example is shown in the following listing:
+To mark cell as read-only class "read_only" should be added to the '<td>' tag that contains read-only text. Example is shown in the following listing:
 
 {{{
  <table id="myDataTable">
