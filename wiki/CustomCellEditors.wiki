@@ -1,4 +1,4 @@
-#summary Implementation
+#summary Configuration of custom editors for columns
 *[Overview]* > *[EditCell Editing cells]* > Custom cell editors
 = Introduction =
 
@@ -39,9 +39,12 @@ $(document).ready(function () {
 </script>
 }}}
 
-This is an array of settings that will be applied on table columns. This array should have the same number of columns as original table.
+This is an array of settings that will be applied on table columns. This array should have the same number of columns as original table. Values set as an array elements can have following values:
+ * 'null' value marking entire column as read-only (no editor will be aplied on the cells in the column,
+ * {} value that set default editor to the column cells,
+ * JSON object with properties same as the properties of  <a href="http://www.appelsiini.net/projects/jeditable">JQuery JEditable </a> plugin.
 
-Editor properties that are set in this array are identical to the properties of  <a href="http://www.appelsiini.net/projects/jeditable">JQuery JEditable plugin</a>. DataTables Editable plugin delegates cell editing functionalities to the JEditable plugin and just passes properties in the aoColumns to the editors for the particular columns.
+DataTables Editable plugin delegates cell editing functionalities to the JEditable plugin and just passes properties in the aoColumns to the editors for the particular columns.
 
 You can add submit button in the cell editor if you want - otherwise value will be submitted when the user press ENTER key. Leaving the cell will cancel changes. Note that if you use a text area as an input element instead of text box or select list you should use explicit submit button. In the text area, ENTER key is used for the new line, so you will not be able to post changes to the server if explicit submit button is not placed.
 
