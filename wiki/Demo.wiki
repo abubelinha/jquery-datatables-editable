@@ -11,6 +11,8 @@ In this section can be found live examples of the JQuery !DataTables Editable pl
  # [http://jquery-datatables-editable.googlecode.com/svn/trunk/customization.html UI Customization] where you can see how you can customize user interface by applying jquery UI theme,
  # [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-messages.html Custom message boxes] where you can see how you can replace standard message boxes with the custom ones (jAlert plugin is used in this example),
  # [http://jquery-datatables-editable.googlecode.com/svn/trunk/configure-dom.html DOM configuration]  in this example you can see how you can completely configure DOM and place two tables in the same page.
+ # [http://jquery-datatables-editable.googlecode.com/svn/trunk/ajax.html Ajax source] in this example is shown editable plugin used with a dataTable that used source taken via Ajax request
+ # [http://jquery-datatables-editable.googlecode.com/svn/trunk/server_side_processing.html Server-side processing] in this example is shown editable plugin used with a dataTable in the server-side processing mode
 
 You can also download an archive with the examples from a [http://code.google.com/p/jquery-datatables-editable/downloads/detail?name=JQuery-DataTables-Editable.example.1.0.0.zip Project example].
   
