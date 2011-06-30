@@ -69,6 +69,14 @@ $('#myDataTable').dataTable().makeEditable({
                 }); 
 }}}
 
+
+== Handling server errors ==
+
+Server-side page can return error message to the plugin if record cannot be added and plugin will show this error message in the popup dialog. To return error message server side page should:
+* Return some error HTML status as a response e.g. 404, 405, etc
+* Return content of the message that should be shown as a response text
+If plugin detects any error status response content will be shown as a error message see example on the http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-messages.html
+
 = Server-side page implementation =
 
 Server side page that handles "add new record" AJAX request should read values from request sent by plugin, add new record and return back id of the record that is created.
