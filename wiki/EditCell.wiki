@@ -134,4 +134,5 @@ In the examples above it can be noticed that server-side pages looks same. They 
  * [AddingNewRecords Adding new record] - How to implement adding new rows in the table,
  * [DeleteRecord Deleting records in the table] - How to implement deleting rows from the table,
  * [CustomCellEditors Custom cell editors] - How to set different types of editors (dropdowns, text areas) on the table columns,
- * [CellEditorValidation Validation of cell editor inputs] - How to set validation rules in the inline editors.
+ * [CellEditorValidation Validation of cell editor inputs] - How to set validation rules in the inline editors,
+ * [NonStandardEditors Using non standard editors] - How to use non-standard JEditable editor types such as check boxes or calendars.
