@@ -1,0 +1,42 @@
+#summary How to use non -standard inline editors
+*[Overview]* > *[EditCell Editing cells]* > Non-standard cell editors
+
+= Introduction =
+
+JEditable supports the following types of inline editors:
+  * Text input
+  * Text area
+  * Select list
+In the CustomCellEditors page you can find description how to use these editors. JEditable supports other custom input types that can be added as plugins (examples are date picker, checkbox etc)
+
+
+= Details =
+
+Non-standard inline editors are added the same way as the standard ones - in the aoColumns array are set types of editors. The only prerequisite is that jeditable plugin files must be included on the page because code for the non-standard editors is not part of jquery.jeditable.js plugin. Example code fr setting non-standard inline editors is shown in the following listing:
+
+{{{
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function () {
+    $('#example').dataTable().makeEditable({
+        sUpdateURL: "UpdateData.php",
+        "aoColumns": [
+                    	{
+                    		type: 'datepicker',
+                    		sSuccessResponse: "IGNORE"
+                    	},
+                    	{
+                    		type: 'checkbox',
+                    		sSuccessResponse: "IGNORE"
+                    	},
+                    	{
+                    		type: 'timepicker',
+                    		sSuccessResponse: "IGNORE"
+                    	}
+		]
+    });
+})
+</script>
+}}}
+
+For each column, in the type you should put name of the editor that will be used. You can how it works in the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example].
+Important this is to set the sSuccessResponse to "IGNORE", in order to force plugin to validation of success of the edit operation by comparing the currently edited value with the value returned from thee server. If non-standard editor is used, plugin will update cell once the update request is sent without any additional validation.
