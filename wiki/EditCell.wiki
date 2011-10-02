@@ -1,7 +1,7 @@
 #summary Setup editing of the cells in the table
 *[Overview]* > Editing cells
 ----
-More - [CustomCellEditors Individual column editors] [CellEditorValidation Validation]  [NonStandardEditors Custom editors]  [ReadOnlyCells Read-only cells]
+More - [EditorSettings Settings] [CustomCellEditors Individual column editors] [CellEditorValidation Validation]  [NonStandardEditors Custom editors]  [ReadOnlyCells Read-only cells]
 = Table of content =
 <wiki:toc max_depth="2" />
 
