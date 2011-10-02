@@ -1,0 +1,58 @@
+#summary Overview of the customization options of the edit functionality
+*[Overview]* > *[EditCell Editing cells]* > Settings
+= Introduction =
+
+There are several options/settings that can be applied in order to customize editor behavior.
+
+== Standard options ==
+
+The following options can be used to customize update functionality:
+  * sUpdateURL - URL of the page that will be used to update cell value on the server side, or function that will be called when cell is updated. If function is used, the first parameter is the value that will be sent to the server, and the second parameter is JEditable settings object, 
+  * sReadOnlyCellClass - class that will mark read-only cells. On these cells will not be applied editors.
+  * oUpdateParameters - additional parameters that will be sent in the Ajax call to the sUpdateURL (see [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-parameters.html demo page]),
+  * ajaxoptions - set of Ajax options that will be applied to the Ajax call (see [http://api.jquery.com/jQuery.ajax/ JQuery site] for details). This setting is useful if you want to change HTTP protocol from POST to GET.
+
+Example of the customization is shown in the following example:
+
+{{{
+
+$('#example').dataTable()
+             .makeEditable({
+		//sUpdateURL: "UpdateData.php",
+                sUpdateURL: function(value, settings){
+                                return value;
+                },
+            	sReadOnlyCellClass: "read_only"
+            	oUpdateParameters: { 
+			"status": "1",
+			"number": function(){ return 11; }
+                },
+            	ajaxoptions:{ type: 'GET' }
+	});
+
+}}}
+
+== Events ==
+
+There are two event handler function that can be attached to the editors:
+  * fnOnEditing(input) - function that will be called before edit request is sent. Parameter input is a input that is used as a JEditable inline editor. If function returns false, edit action will be canceled (useful for the custom validation).
+  * fnOnEdited(status) - function that will be called when edit action is finished. Parameter status is a string "success" or "failure".
+
+{{{
+
+$('#example').dataTable()
+             .makeEditable({
+            	fnOnEditing: function(input)
+		{ 	
+		  alert("Updating cell with value " + input.val());
+		  return true;
+		},
+            	fnOnEdited: function(status)
+		{ 	
+		  alert("Edit action finished. Status - " + status);
+		}
+	});
+
+}}}
+
+See example on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/events.html demo page].
