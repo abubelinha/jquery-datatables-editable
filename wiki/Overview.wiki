@@ -4,7 +4,7 @@
 =Site content=
  * [HTMLSource HTML code]
  * [EditCell Editing cells]
-  * [CustomCellEditors Custom cell editors]
+  * [CustomCellEditors Custom cell editors(select lists, text areas)] and [NonSandardEditors other custom editors(checkboxes, calendars)]
   * [CellEditorValidation Validating cell editor inputs]
  * [AddingNewRecords Adding new records]
  * [DeleteRecord Deleting rows]
