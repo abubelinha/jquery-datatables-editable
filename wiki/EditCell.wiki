@@ -1,11 +1,13 @@
 #summary Setup editing of the cells in the table
 *[Overview]* > Editing cells
+----
+More - [CustomCellEditors Individual column editors] [CellEditorValidation Validation]  [NonStandardEditors Custom editors]  [ReadOnlyCells Read-only cells]
 = Table of content =
 <wiki:toc max_depth="2" />
 
 = Introduction =
 
-!DataTables Editable plugin enables user to edit the cells in the table. Updating cells is done by using inline editable plugin called JEditable. DataTables Editable plugin is internally configured to replace cell content with editable textbox when user double clicks on the cell. Folowing figure shows how user can edit data:
+!DataTables Editable plugin enables user to edit the cells in the table. Updating cells is done by using inline editable plugin called [JEditable http://www.appelsiini.net/projects/jeditable]. !DataTables Editable plugin is internally configured to replace cell content with editable textbox when user double clicks on the cell. Following figure shows how user can edit data:
 
 http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/datatables_edit_cell.png
 
@@ -53,7 +55,7 @@ AJAX request contains the following values:
  * columnId id of the column from 0 to the total number of columns - 1. Hidden columns are counted. This value can be used instead of the column name to identify the property that should be updated.  You should use columnId instead of the columnPosition if you have hidden columns in the table (either initially hidden or dynamically hidden). On the [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html live demo page] can be seen plugin in action. Note that edit action returns server error because google.code site do not allow POST request.
 
 = Server-side page implementation =
-On the server-side one page that accepts parameters described in the previous section needs to be created. Server-side page should accept these parameters and update record in the database. In the sections below are shown short examples of implementation ih PHP, ASP.NET MVC, and Java
+On the server-side one page that accepts parameters described in the previous section needs to be created. Server-side page should accept these parameters and update record in the database. In the sections below are shown short examples of implementation in the PHP, ASP.NET MVC, and Java
 
 == PHP Example ==
 Example of the server-side page that can be implemented in PHP is shown below:
@@ -132,7 +134,4 @@ In the examples above it can be noticed that server-side pages looks same. They 
 = See also =
  * [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html Demo] - Live demo page. Note that edit action returns server error because google.code site do not allow POST request.
  * [AddingNewRecords Adding new record] - How to implement adding new rows in the table,
- * [DeleteRecord Deleting records in the table] - How to implement deleting rows from the table,
- * [CustomCellEditors Custom cell editors] - How to set different types of editors (dropdowns, text areas) on the table columns,
- * [CellEditorValidation Validation of cell editor inputs] - How to set validation rules in the inline editors,
- * [NonStandardEditors Using non standard editors] - How to use non-standard JEditable editor types such as check boxes or calendars.
+ * [DeleteRecord Deleting records in the table] - How to implement deleting rows from the table.
