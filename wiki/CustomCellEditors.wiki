@@ -33,7 +33,7 @@ $(document).ready(function () {
                     		onblur: 'submit',
                     		data: "{'':'Please select...', 'A':'A','B':'B','C':'C'}"
                     	}
-					]
+		]
     });
 })
 </script>
@@ -56,18 +56,22 @@ JSON object with properties same as the properties of  <a href="http://www.appel
 
 aoColumns:[
            {
-             indicator: 'Saving Engine Version...',
-             tooltip: 'Click to select engine version',
+             indicator: 'Saving Dropdown',
+             tooltip: 'Click to show dropdown',
              loadtext: 'loading...',
              type: 'select',
              onblur: 'cancel',
              submit: 'Ok',
              loadurl: 'EngineVersionList.php',
-             loadtype: 'GET',
+             loadtype: 'GET'
            },
            {
+             indicator: 'Saving Text',
+             tooltip: 'Click to show textbox',
+             onblur: 'submit'
            },
            {
+             onblur: 'ignore'
            },
 ]
 }}}
@@ -92,20 +96,20 @@ aoColumns:[
            {
              fnOnCellUpdated: function(sStatus, sValue, settings){
 		             },
-             //sUpdateURL: "CustomUpdatePage.php",
-             sUpdateURL: function(value, settings){
-                		return value;
- 			},
+             sUpdateURL: "CustomUpdatePage.php",
              oUpdateParameters:{
                                 type:"A",
                                 count: function(){ 
                                           return $("tr").length;
-                                }
+                                },
+             sSuccessResponse: "ok"
            },
            {
-           },
-           {
-           },
+             sUpdateURL: function(value, settings){
+                		return value;
+ 			},
+             sSuccessResponse: "IGNORE"
+           }
 ]                
 
 }}}
