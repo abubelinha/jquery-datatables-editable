@@ -95,7 +95,7 @@ public class HomeController : Controller
 } 
 }}}
 
-Plugin should be initialized with sUpdateURL parameter with value /Home/!UpdateData in order to map request to the !UpdateData method of the !HomeController.
+Plugin should be initialized with sUpdateURL parameter with value /Home/!UpdateData in order to map request to the !UpdateData method of the !HomeController. You can download code example in the tutorial on the [http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable.aspx Code Project].
 
 == Java Example ==
 
@@ -129,6 +129,7 @@ public class Home extends HttpServlet {
 
 }}}
 
+You can download code example in the tutorial on the [http://www.codeproject.com/KB/java/J2EE-Editable-Web-Table.aspx Code Project].
 == Summary ==
 In the examples above it can be noticed that server-side pages looks same. They accepting parameters, update records and return back value that is edited. Interface is same in all implementations only difference is in the business logic code that updates the data.
 = See also =
