@@ -9,7 +9,6 @@ JEditable supports the following types of inline editors Text input, Text area, 
 
 Non-standard inline editors are added the same way as the standard ones - in the aoColumns array are set types of editors. The only prerequisite is that jeditable plugin files must be included on the page because code for the non-standard editors is not part of jquery.jeditable.js plugin. Example code for setting non-standard inline editors is shown in the following listing:
 
-
 {{{
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function () {
@@ -18,16 +17,13 @@ $(document).ready(function () {
         sUpdateURL: "UpdateData.php",
         "aoColumns": [
                     	{
-                    		type: 'datepicker',
-                    		sSuccessResponse: "IGNORE"
+                    		type: 'datepicker'
                     	},
                     	{
-                    		type: 'checkbox',
-                    		sSuccessResponse: "IGNORE"
+                    		type: 'checkbox'
                     	},
                     	{
-                    		type: 'timepicker',
-                    		sSuccessResponse: "IGNORE"
+                    		type: 'timepicker'
                     	}
 		]
     });
@@ -36,8 +32,6 @@ $(document).ready(function () {
 }}}
 
 For each column, in the type property you should put a name of the editor that will be used in that column will be used. You can how it works in the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example].
-
-Important this is to set the sSuccessResponse to "IGNORE", in order to force plugin to skip validation of the edit operation by comparing the currently edited value with the value returned from thee server. If non-standard editor is used, plugin will update cell once the update request is sent without any additional validation.
 
 == Inline check box editor ==
 
@@ -58,8 +52,7 @@ $('#example')
 		                        cancel: 'Cancel',
  				        checkbox: { trueValue: 'Yes',
                                                     falseValue: 'No'
-                                                  },
-					sSuccessResponse: "IGNORE"
+                                                  }
   				     },
                                      null,
                                      null,
@@ -70,11 +63,11 @@ $('#example')
 }}}
 
 First, you will need to set type of editor to 'checkbox'. Good practice is to add Ok and Cancel buttons by the check box, but this is optional. You can define what values will be sent to the server-side when check box is checked or unchecked in the check box property (in this case will be sent values Yes and No).
-Optionally you can set that plug-in should not check whether the operation has succeeded on the server-side. You can see it in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page.
+You can see it in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page.
 
 == Inline date picker ==
 
-Date picker is standard jquery ui dialog that can be used to enter date in the cell. To add inline date picker you will need to include jquery.jeditable.datepicker.js and standard jquery-ui.js file(to include JQuery ui date picker in the page). One version can be found on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example], but you can find latest version on JEditable plug-in site. Once you take this file you should add it to the page - something like:
+Date picker is standard jquery ui dialog that can be used to enter date in the cell. To add inline date picker you will need to include jquery.jeditable.datepicker.js and standard jquery-ui.js file(to include JQuery ui date picker in the page). One version can be found on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example], but you can find latest version on JEditable plug-in site. Once you take this file, you should add it to the page - something like:
 {{{
 <script src="media/js/jquery.jeditable.datepicker.js" type="text/javascript"></script>
 }}}
@@ -97,7 +90,7 @@ $('#example')
                         });
 }}}
 
-As you can see this editor do not have some specific options. You can only set type and disable validation. You can see it in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page.
+As you can see this editor do not have some specific options - you can only set type of editor. You can see it in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page.
 
 == Inline time editor ==
 
@@ -115,8 +108,7 @@ $('#example')
                        "aoColumns": [
                                      {  type:   'time',
 					submit: 'OK',
-					cancel: 'Cancel',
-					sSuccessResponse: "IGNORE"
+					cancel: 'Cancel'
   				     },
                                      null,
                                      null,
@@ -126,8 +118,7 @@ $('#example')
                         });
 }}}
 
-You should set the type of editor to 'time', add buttons for submit and cancel, and disable validation. You can see it in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page.
-
+You should set the type of editor to 'time', add buttons for submit and cancel. You can see it in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page.
 
 == Inline file upload ==
 
@@ -145,8 +136,7 @@ $('#example')
                        "aoColumns": [
                                      {  type:   'ajaxupload',
 					submit: 'upload',
-					cancel: 'Cancel',
-					sSuccessResponse: "IGNORE"
+					cancel: 'Cancel'
   				     },
                                      null,
                                      null,
@@ -156,4 +146,10 @@ $('#example')
                         });
 }}}
 
-You should set the type of editor to 'ajaxupload', add buttons for upload and cancel, and disable validation. You can see it in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page.
+You should set the type of editor to 'ajaxupload', add buttons for upload and cancel. You can see it in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page.
+
+= Handling errors/success actions =
+
+One important thing is how you can notify plug-in that server-side page has successfully updated cell.
+  # If server-side page has updated cell you will need to return OK string. in this case plug-in will update cell value in the table.
+  # If server-side page has failed to update cell your will need to return ERROR <Error message text>. In this case, plug-in will show <Error message text> in alert, and cancel update.
