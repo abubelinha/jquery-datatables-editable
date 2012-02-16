@@ -1,5 +1,7 @@
 #summary How to use non-standard inline editors
-*[Overview]* > *[EditCell Editing cells]* > Nonstandard inline editor types
+*[Overview]* > *[EditCell Editing cells]* > Non-standard custom inline editor types
+
+See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live demo page] [CustomCellEditors Standard custom editor types]
 
 = Introduction =
 
@@ -152,4 +154,7 @@ You should set the type of editor to 'ajaxupload', add buttons for upload and ca
 
 One important thing is how you can notify plug-in that server-side page has successfully updated cell.
   # If server-side page has updated cell you will need to return the same value that is sent to the server. In this case plug-in will update cell value in the table.
-  # If server-side page has failed to update cell your will need to return ERROR <Error message text>. In this case, plug-in will show <Error message text> in alert, and cancel update. You can see error messages in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page. Try to change time and you will see server-side page returns ERROR <Error message text>, and that plugin revert change and displays error message in alert.
+  # If server-side page has failed to update cell your will need to return ERROR <Error message text>. In this case, plug-in will show <Error message text> in alert, and cancel update. You can see error messages in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page. Try to change time and you will see server-side page returns ERROR <Error message text>, and that plug-in revert change and displays error message in alert.
+
+
+See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live demo page] [CustomCellEditors Standard custom editor types]
