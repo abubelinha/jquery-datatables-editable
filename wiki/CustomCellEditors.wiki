@@ -1,5 +1,8 @@
 #summary Configuration of custom editors for columns
 *[Overview]* > *[EditCell Editing cells]* > Individual column editors
+
+See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-editors.html live demo page] [NonStandardEditors Non-standard editor types]
+
 = Introduction =
 
 In the JEditable plugin text box is default cell editor, however, JEditable plugin that is used for editing provides other editor types.  
@@ -113,3 +116,5 @@ aoColumns:[
 ]                
 
 }}}
+
+See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-editors.html live demo page] [NonStandardEditors Non-standard editor types]
