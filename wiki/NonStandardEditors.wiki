@@ -1,5 +1,5 @@
-#summary How to use non-standard inline editors
-*[Overview]* > *[EditCell Editing cells]* > Non-standard custom inline editor types
+#summary How to use non-standard custom editor types
+*[Overview]* > *[EditCell Editing cells]* > Non-standard custom column editor types
 
 See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live demo page] [CustomCellEditors Standard custom editor types]
 
