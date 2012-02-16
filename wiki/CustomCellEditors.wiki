@@ -1,7 +1,7 @@
 #summary Configuration of custom editors for columns
 *[Overview]* > *[EditCell Editing cells]* > Individual column editors
 
-See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-editors.html live demo page] [NonStandardEditors Non-standard editor types]
+See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-editors.html live demo page] [NonStandardEditors Non-standard custom editor types]
 
 = Introduction =
 
@@ -117,4 +117,4 @@ aoColumns:[
 
 }}}
 
-See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-editors.html live demo page] [NonStandardEditors Non-standard editor types]
+See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-editors.html live demo page] [NonStandardEditors Non-standard custom editor types]
