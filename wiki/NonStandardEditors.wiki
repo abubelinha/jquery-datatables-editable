@@ -1,5 +1,5 @@
-#summary How to use non -standard inline editors
-*[Overview]* > *[EditCell Editing cells]* > Custom editor types
+#summary How to use non-standard inline editors
+*[Overview]* > *[EditCell Editing cells]* > Nonstandard inline editor types
 
 = Introduction =
 
