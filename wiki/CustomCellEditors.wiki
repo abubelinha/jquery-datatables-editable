@@ -1,5 +1,5 @@
 #summary Configuration of custom editors for columns
-*[Overview]* > *[EditCell Editing cells]* > Individual column editors
+*[Overview]* > *[EditCell Editing cells]* > Standard custom column editor types
 
 See also: [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-editors.html live demo page] [NonStandardEditors Non-standard custom editor types]
 
