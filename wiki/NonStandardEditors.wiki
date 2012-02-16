@@ -62,7 +62,7 @@ $('#example')
                         });
 }}}
 
-First, you will need to set type of editor to 'checkbox'. Good practice is to add Ok and Cancel buttons by the check box, but this is optional. You can define what values will be sent to the server-side when check box is checked or unchecked in the check box property (in this case will be sent values Yes and No).
+First, you will need to set type of editor to 'checkbox'. Good practice is to add Ok and Cancel buttons by the check box, but this is optional. On the [http://jquery-datatables-editable.googlecode.com/svn/trunk/checkbox.html live demo page] you can see how it works without buttons. You can define what values will be sent to the server-side when check box is checked or unchecked in the check box property (in this case will be sent values Yes and No).
 You can see it in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/inline-edit-extra.html live example] page.
 
 == Inline date picker ==
