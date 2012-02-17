@@ -91,10 +91,29 @@ In the examples above it can be noticed that server-side pages looks same. They 
 Id attribute of the button can be configured. Following code is used to define custom id of the delete button:
 {{{
 $('#myDataTable').dataTable().makeEditable({
-                        btnDeleteRow: "btnDeleteCompany"
+                        sDeleteRowButtonId: "btnDeleteCompany"
                 });
 }}}
-In this case, a delete button must have a "btnDeleteCompany" id.
+In this case, a delete button must have a "sDeleteRowButtonId" id.
+
+
+== Customize look of Delete button ==
+
+You can convert standard delete button to JQuery UI button. You will need to pass parameters for initialization of button via oDeleteRowButtonOptions parameter. Example is shown below:
+{{{
+$('#example').dataTable().makeEditable({
+                            oDeleteRowButtonOptions: {
+				label: "Remove",
+                                icons: { primary: 'ui-icon-trash' }
+                            }
+                          });
+}}}
+
+In this case is set label "Remove on the button with trash icon. You can see full list of options on the [http://jqueryui.com/demos/button/ JQuery UI button] demos/documentation page.
+
+See how it works on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/customize-buttons.html live example] page.
+
+
 = See also =
  * [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html Live demo]
  * [AddingNewRecords Adding new record]
