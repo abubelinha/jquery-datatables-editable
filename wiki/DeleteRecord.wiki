@@ -7,11 +7,12 @@
 !DataTables Editable plugin enables user to select and delete the rows in the table. Delete button is always disabled but when user select any row in the table it becomes enabled and user can delete selected row by pressing it.
 
 = Client-side implementation =
-On the client-side page should be done following tasks in order to implement deleting rows.
- * Delete button should be added to the page
- * Setting the page that will handle delete requests
 
-== Adding Delete button ==
+There are tow ways to add delete functionalities to the DataTable:
+ * Adding one delete button that will delete selected row
+ * Adding delete link in each row in the table
+
+== Adding separate delete button ==
 
 Delete button that will be used by the user to delete rows must be manually placed in the page. Only requirement is that delete button must have an id "btnDeleteRow". Example of the delete button is shown in the following example:
 {{{
@@ -19,7 +20,7 @@ Delete button that will be used by the user to delete rows must be manually plac
 }}} 
 Position, style and text of the button can be changed. Only requirement it that id must be id="btnDeleteRow" because plugin finds the delete button be this id.
 
-== Setting the server-side page ==
+=== Setting the server-side page ===
 
 In the plugin initialization call should be set parameter sDeleteURL, that is used to define what server-side page should be used for submitting the add AJAX request. Example of the initialization code is shown below:
 {{{
@@ -27,6 +28,18 @@ $('#myDataTable').dataTable().makeEditable({
                     sDeleteURL: "/Home/DeleteData.php"
                 }); 
 }}}
+
+== Put inline delete link in each row in the table ==
+
+If you do not like select/delete functionality you can put delete link in each row. In that case, you will need to add class called 'table-action-deletelink' in each link and put the url that will be called to delete row in the href attribute. Example of that kind of link is shown in the following code:
+
+{{{
+<a class="table-action-deletelink" href="DeleteData.php?id=2">Delete</a>
+}}}
+
+You can see it in action on the 
+[http://jquery-datatables-editable.googlecode.com/svn/trunk/ajax-inlinedeletebuttons.html live demo] page.
+
 = Server-side implementation =
 Server side page that handles "delete record" AJAX request should read id from the request sent by plugin, delete the record by id and return back string "ok". If deleting of the record fails, this page should return error text - any text different than "ok" will be shown to the user as an error message. In the following sections are show examples of the server-side page implementation in the PHP, ASP.NET MVC, and Java.
 
