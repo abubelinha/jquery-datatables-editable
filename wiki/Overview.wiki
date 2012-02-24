@@ -1,5 +1,5 @@
 #summary Overview of the functionalities provided by the DataTables Editable plugin
-#labels Phase-Requirements
+#labels Phase-Requirements,Featured
 
 =Site content=
  * [HTMLSource HTML code]
