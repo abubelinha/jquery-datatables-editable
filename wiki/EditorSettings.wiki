@@ -32,7 +32,7 @@ $('#example').dataTable()
 
 }}}
 
-== Events ==
+== Events Handlers ==
 
 There are two event handler function that can be attached to the editors:
   * fnOnEditing(jInput, oEditableSettings, sOriginalText, id) - function that will be called before edit request is sent. Parameter jInput is a JQuery wrapper for the input that is used as a JEditable inline editor, oEditableSettings is settings set to the JEditable plugin, sOriginalText is an original text, and id is id of the row. If function returns false, edit action will be canceled (useful for the custom validation).
@@ -56,3 +56,16 @@ $('#example').dataTable()
 }}}
 
 See example on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/events.html demo page].
+
+== Changing the inline edit events ==
+
+Instead of the default double click event for inline editing you can use any other JQuery event. In the following example is shown how you can set click event to initiate inline editing:
+
+{{{
+$('#example').dataTable()
+             .makeEditable({
+									
+		oEditableSettings: { event: 'click' }			});
+
+}}}
+See example on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-edit-events.html demo page].
