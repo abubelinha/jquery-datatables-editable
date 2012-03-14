@@ -65,7 +65,8 @@ Instead of the default double click event for inline editing you can use any oth
 $('#example').dataTable()
              .makeEditable({
 									
-		oEditableSettings: { event: 'click' }			});
+		oEditableSettings: { event: 'click' }
+			});
 
 }}}
 See example on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/custom-edit-events.html demo page].
