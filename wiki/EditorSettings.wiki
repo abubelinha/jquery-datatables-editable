@@ -35,16 +35,16 @@ $('#example').dataTable()
 == Events ==
 
 There are two event handler function that can be attached to the editors:
-  * fnOnEditing(input) - function that will be called before edit request is sent. Parameter input is a input that is used as a JEditable inline editor. If function returns false, edit action will be canceled (useful for the custom validation).
+  * fnOnEditing(jInput, oEditableSettings, sOriginalText, id) - function that will be called before edit request is sent. Parameter jInput is a JQuery wrapper for the input that is used as a JEditable inline editor, oEditableSettings is settings set to the JEditable plugin, sOriginalText is an original text, and id is id of the row. If function returns false, edit action will be canceled (useful for the custom validation).
   * fnOnEdited(status) - function that will be called when edit action is finished. Parameter status is a string "success" or "failure".
 
 {{{
 
 $('#example').dataTable()
              .makeEditable({
-            	fnOnEditing: function(input)
+            	fnOnEditing: function(jInput, oEditableSettings, sOriginalText, id)
 		{ 	
-		  alert("Updating cell with value " + input.val());
+		  alert("Updating cell with value " + input.val() + ". Sending request to " + oEditableSettings.target);
 		  return true;
 		},
             	fnOnEdited: function(status)
