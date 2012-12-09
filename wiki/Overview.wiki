@@ -10,31 +10,30 @@
 
 = Introduction =
 
-JQuery !DataTables Editable plugin enhances standard HTML table by adding data management functionalities (adding new records to the table, selecting and deleting records, and editing cells inline) on the client-side. Look of the HTML table when JQuery !DataTables Editable plugin is applied is shown below:
+The JQuery !DataTables Editable plugin enhances the standard HTML table by adding data management functionalities (adding new records to the table, selecting and deleting records, and editing cells inline) on the client-side. An example is shown below:
 
 http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/datatables_edit_cell.png
 
-There are standard navigation functionalities such as pagination, ordering, filtering by keyword, changing the number of items that should be shown per page. All these functionalities are added by the JQuery [DataTables http://datatables.net] plugin.
-In addition JQuery !DataTables Editable plugin add ability to add new record, select and delete record and edit the cells inline as shown in the figure.
-This plugin integrates several plugins such as JQuery !DataTables, JQuery Editable, JQuery Validation plugins and implement common data management functionalities. 
+The JQuery [DataTables http://datatables.net] plugin provides standard navigation functionalities such as pagination, ordering, filtering by keyword, and changing the number of items that should be shown per page. In addition to these, the JQuery !DataTables Editable plugin adds the ability to add a new record, select and delete records and edit the cells inline as shown in the figure.
+This plugin integrates several plugins such as JQuery !DataTables, JQuery Editable, JQuery Validation plugins and implements common data management functionalities. 
 
-All required processing is encapsulated within the plugin, and only required implementation is a server-side code that accepts add, update and delete requests. Server-side code can be implemented in any language (PHP, ASP.NET/C#, Java) as long as plugin interface requirements are met.
-This page contains short description explaining the features of the plugin. You can download complete example and see how it works.
+All client-side processing is encapsulated within the plugin. It needs server-side code that accepts add, update and delete requests. Server-side code can be implemented in any language (PHP, ASP.NET/C#, Java) as long as the plugin interface requirements are met.
+
+You can download complete examples and see how it works.
 
 JQuery !DataTables Editable Plugin enables user to make the following actions in the table:
- * Select and delete row in the table
+ * Select and delete a row in the table
  * Edit cell values inline
- * Add new row
+ * Add a new row
 
-Plugin handles all necessary functionalities - only required implementation is server-side logic that handles AJAX requests sent by the plugin.
 
 =Implementation of client-side web page=
-First step in the integration of JQuery !DataTables Editable plugin into the your application is implementation of the client-side page. Detailed instructions about implementation of client-side code can be found [HTMLSource here]. In this section is shown overview of implementation. There are two important elements that should be added to the client-side web page:
- * HTML table that contains data,
+The first step in the integration of JQuery !DataTables Editable plugin into the your application is implementing the client-side, detailed instructions can be found [HTMLSource here]. This section contains an overview of the implementation. There are two important elements that should be added to the client-side web page:
+ * a HTML table that contains data,
  * !JavaScript initialization code that enhances the table.
 
 ==Table Source==
-This plugin works with a plain HTML table. Example of the HTML table is shown below:
+This plugin works with a plain HTML table, for example:
 
 {{{
  <table id="myDataTable">
