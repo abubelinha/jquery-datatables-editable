@@ -10,9 +10,14 @@
 
 = Introduction =
 
-The JQuery !DataTables Editable plugin enhances the standard HTML table by adding data management functionalities (adding new records to the table, selecting and deleting records, and editing cells inline) on the client-side. An example is shown below:
+The JQuery !DataTables Editable plugin enhances the standard HTML table by adding data management functionalities on the client-side. An example is shown below:
 
 http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/datatables_edit_cell.png
+
+JQuery !DataTables Editable Plugin enables user to make the following actions in the table:
+ * Select and delete a row in the table
+ * Edit cell values inline
+ * Add a new row
 
 The JQuery [DataTables http://datatables.net] plugin provides standard navigation functionalities such as pagination, ordering, filtering by keyword, and changing the number of items that should be shown per page. In addition to these, the JQuery !DataTables Editable plugin adds the ability to add a new record, select and delete records and edit the cells inline as shown in the figure.
 This plugin integrates several plugins such as JQuery !DataTables, JQuery Editable, JQuery Validation plugins and implements common data management functionalities. 
@@ -21,10 +26,6 @@ All client-side processing is encapsulated within the plugin. It needs server-si
 
 You can download complete examples and see how it works.
 
-JQuery !DataTables Editable Plugin enables user to make the following actions in the table:
- * Select and delete a row in the table
- * Edit cell values inline
- * Add a new row
 
 
 =Implementation of client-side web page=
@@ -69,10 +70,12 @@ This plugin works with a plain HTML table, for example:
 </table>
 }}}
 
-As you can see standard HTML table need to be placed in the HTML source of the page. Only difference is that id of the each record need to be placed in the TR tags as an attribute.
+As you can see it looks like a normal HTML table, the only difference is that an ID for each record has to be placed in the TR tags.
 
-==Initializing JQuery !DataTables Editable plugin==
-JQuery !DataTables Editable plugin integrates several plugins that add different functionalities to the table. Most important plugin is JQuery !DataTables plugin that adds filtering, ordering and pagination functionalities to the table. This plugin is built on the top of !DataTables plugin and it adds additional data-management functionalities. JQuery !DataTables Editable plugin is initialized using the following code:
+==Initializing the JQuery !DataTables Editable plugin==
+The JQuery !DataTables Editable plugin integrates several plugins that add different functionalities to the table. The most important one is the JQuery !DataTables plugin that adds filtering, ordering and pagination functionalities to the table. 
+
+The JQuery !DataTables Editable plugin is initialized using the following code:
 
 {{{
         <script language="javascript" type="text/javascript">
@@ -82,41 +85,41 @@ JQuery !DataTables Editable plugin integrates several plugins that add different
         </script>
 }}}
 
-myDataTable is an id of the HTML table that should be enhanced. First, !DataTables plugin is applied to add common table functionalities, and then this table is made editable using the plugin created in this project.
+myDataTable is an id of the HTML table that should be enhanced. First, the !DataTables plugin is applied to add common table functionalities, and then this table is made editable using the plugin created in this project.
 
-=Implementation of the server-side pages=
+=Implementation of the server side=
 
-When the !DataTables Editable plugin is initialized, it sends Update, Delete and Add requests to the server-side. Example of AJAX calls sent to the server-side by the plugin is shown in the figure below:
+When the !DataTables Editable plugin is initialized, it sends Update, Delete and Add requests to the server-side. Example AJAX calls made by the plugin are shown in the figure below:
 
 http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/Ajax_trace.png
 
-To accept these actions, server-side pages that handles data management requests need to be created. In the following sections is described what should be implemented on the server-side to make this plugin fully functional.
+The following sections describe what should be implemented on the server-side to make this plugin fully functional.
 
 ==[DeleteRecord Selecting and deleting rows]==
-JQuery !DataTables Editable plugin enables user to select and delete rows in the table. When user press delete button, plugin creates an AJAX request to the server-side with information of the id of the record that is deleted. Example of request that is sent to the server-side is:
+JQuery !DataTables Editable plugin enables the user to select and delete rows in the table. When the user presses the delete button, an AJAX request is made with information of the id of the record that is deleted. Example :
 
 {{{
    http://www.site.com/folder/DataData?id=22
 }}}
-URL of the delete page can be changed in plugin configuration.  id value that is sent to the server-side is placed as an id attribute of {{{<tr>}}} tag.
+The URL of the delete page can be changed in plugin configuration.  The id value that is sent to the server-side is placed as an id attribute in the {{{<tr>}}} tag.
 
-On the server-side, one page that handles delete AJAX requests that accepts one parameter (id) need to be created. Server-side page should return string "ok" if a record is successfully deleted or error message if delete failed. 
+The server-side page should return "ok" if a record is successfully deleted or an error message if the delete request failed. 
 
 ==[EditCell Editing cell values]==
-Editing cell is done inline by clicking on the table cells. When user finishes with editing AJAX request with cell position and cell value is sent to the server-side.
+Editing a cell is done inline by clicking on it. An AJAX request with cell position and cell value is sent to the server-side when the user finishes editing.
 
-One sever-side page that handles update AJAX requests need to be created. This page should accepts the following parameters:
+The update request has the following parameters:
 
-   * value - that contains text used entered in the table cell while editing
-   * id - id of the record that is deleted (id is placed in TR tag that surrounds the cell that has been edited)
-   * columnId - position of the column of the cell that has been edited (hidden columns are counted also)
+   * value - the edited text
+   * id - id of the record that is edited (id is placed in TR tag that surrounds the cell that has been edited)
+   * columnId - position of the column of the cell that has been edited (hidden columns are omcluded in the count)
    * columnPosition - position of the column of the cell that has been edited (hidden columns are not counted)
-   * rowId - id of the row containing cell the cell that has been edited
+   * rowId - id of the row containing the cell that has been edited
 
-Server-side page should return value that is updated if cell is successfully updated on the server-side or an error message. 
+The server should return the new value for the cell if the cell was successfully updated on the server-side, or an error message. 
 
 ==[AddingNewRecords Adding new rows]==
-To enable adding new record you will need to create a custom HTML form  where a user can enter information about the new record. When user enter information about new record in the form, these will be posted to the server-side page.
+To enable adding new record you will need to create a custom HTML form  where a user can enter information about the new record. When the user enters information about new record in the form, these will be posted to the server-side page.
 
-On the server-side one page that handles add AJAX requests need to be created. This page should accept input values entered in the form and return id of the new record. 
-Detailed information about adding new records using !DataTables Editable plugin can be found [AddingNewRecords here]. 
+The server-side should accept the input values entered in the form and return the id of the new record. 
+Detailed information about adding new records using the !DataTables Editable plugin can be found [AddingNewRecords here]. 
