@@ -10,14 +10,17 @@
 
 = Introduction =
 
-The JQuery !DataTables Editable plugin enhances the standard HTML table by adding data management functionalities on the client-side. An example is shown below:
+The JQuery !DataTables Editable plugin enhances the standard HTML table by adding data management functionalities on the client-side:
 
-http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/datatables_edit_cell.png
-
-JQuery !DataTables Editable Plugin enables user to make the following actions in the table:
  * Select and delete a row in the table
  * Edit cell values inline
  * Add a new row
+
+An example is shown below:
+
+http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/datatables_edit_cell.png
+
+
 
 The JQuery [DataTables http://datatables.net] plugin provides standard navigation functionalities such as pagination, ordering, filtering by keyword, and changing the number of items that should be shown per page. In addition to these, the JQuery !DataTables Editable plugin adds the ability to add a new record, select and delete records and edit the cells inline as shown in the figure.
 This plugin integrates several plugins such as JQuery !DataTables, JQuery Editable, JQuery Validation plugins and implements common data management functionalities. 
