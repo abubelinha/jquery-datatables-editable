@@ -43,16 +43,19 @@ Use this option when you need to implement some custom processing of the value b
 
 == AJAX Request ==
 
-When user finishes with editing cell, an AJAX request will be sent to the URL defined in the sUpdateURL parameter. Example of the AJAX request is shown below:
+When the user finishes editing a cell, an AJAX request will be sent to the URL defined in the sUpdateURL parameter. An example  AJAX request is shown below:
 http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/update_data_ajax_request.png
 
-AJAX request contains the following values:
- * id of the row taken from the id attribute of the TR tag that surrounds cell that has been edited. Use this value to find a record that should be updated.
- * value that is entered in the cell.  This value should be written in the company record.
- * columnName - name of the column. This value is either sName property set for the column or text found in the column heading. You can use this information to determine which property should be updated.
- * rowId from the table.  If 10 rows are shown per page this will be value between 0 and 9.
- * columnPosition position of the column value from 0 to the number of columns you see in the table - 1. Hidden columns are not counted. This value can be used instead of the column name to identify the property that should be updated. Use this value if names of the columns can be dynamically changed. 
- * columnId id of the column from 0 to the total number of columns - 1. Hidden columns are counted. This value can be used instead of the column name to identify the property that should be updated.  You should use columnId instead of the columnPosition if you have hidden columns in the table (either initially hidden or dynamically hidden). On the [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html live demo page] can be seen plugin in action. Note that edit action returns server error because google.code site do not allow POST request.
+The AJAX request contains the following values:
+ * id of the row. This is taken from the id attribute of the TR tag that surrounds the edited cell. Use this value to find a record that should be updated.
+ * value - the value that is entered in the cell.  This value should be written in the company record.
+ * columnName - the name of the column. This value is either the sName property set for the column or text found in the column heading. You can use this information to determine which property should be updated.
+ * rowId the row ID from the HTML table.  If 10 rows are shown per page this will be a value between 0 and 9.
+ * columnPosition - the position of the column, a value from 0 to the number of columns you see in the table - 1. Hidden columns are not counted. This value can be used instead of the column name to identify the property that should be updated. Use this value if names of the columns can be dynamically changed. 
+ * columnId - the id of the column from 0 to the total number of columns - 1. Hidden columns are counted. This value can be used instead of the column name to identify the property that should be updated.  You should use columnId instead of the columnPosition if you have hidden columns in the table (either initially hidden or dynamically hidden). 
+
+
+You can see the plugin in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html live demo page]. Note that the edit action returns a server error because the google.code site does not allow POST requests.
 
 === Setting columnName parameter ===
 
