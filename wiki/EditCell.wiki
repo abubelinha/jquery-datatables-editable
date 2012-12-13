@@ -57,10 +57,10 @@ The AJAX request contains the following values:
 
 You can see the plugin in action on the [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html live demo page]. Note that the edit action returns a server error because the google.code site does not allow POST requests.
 
-=== Setting columnName parameter ===
+=== Setting the columnName parameter ===
 
-Parameter columnName should be name of the column where value should be updated value. By default, plug-in takes this information from the text in the TH cell of the column that is edited. If text in the column matches your database table column name that is everything you will need.
-However, you can explicitly define what value should be set in each column if you set sName parameter i the aoColumns setting of DataTable plugin initialization. Example is shown in the following code:
+The parameter columnName should be name of the column where the value should be updated. By default, the plug-in takes this information from the text in the TH cell of the column that is edited. If the text in the column matches your database table column name that is everything you will need.
+However, you can explicitly define what value should be set in each column if you set the sName parameter in the aoColumns setting during DataTable plugin initialization. An example is shown in the following code:
 
 {{{
 
@@ -84,14 +84,14 @@ $('#myDataTable').dataTable({
                  .makeEditable();
 }}}  
 
-If you setup sName parameters in the aoColumn setting od !DataTable plugin, these values will be sent to the server-side update page as columnName parameters.
+If you setup sName parameters in the aoColumn setting of the !DataTable plugin, these values will be sent to the server-side update page as columnName parameters.
 Good practice is to set actual names of the table columns in these parameters, so you can set some free text in heading cells.
 
 = Server-side page implementation =
-On the server-side one page that accepts parameters described in the previous section needs to be created. Server-side page should accept these parameters and update record in the database. In the sections below are shown short examples of implementation in the PHP, ASP.NET MVC, and Java
+On the server-side one page that accepts the parameters described in the previous section needs to be created. The server-side page should accept these parameters and update record in the database. In the sections below are shown short examples of implementation in the PHP, ASP.NET MVC, and Java
 
 == PHP Example ==
-Example of the server-side page that can be implemented in PHP is shown below:
+
 {{{
 <?php
   //UpdateData.php
@@ -109,11 +109,10 @@ Example of the server-side page that can be implemented in PHP is shown below:
 
 ?>
 }}}
-Plugin should be initialized with sUpdateURL parameter with value /!UpdateData.php in order to send request to the !UpdateData.php page.
+The plugin should be initialized with sUpdateURL parameter with value /!UpdateData.php in order to send request to the !UpdateData.php page.
 
 == ASP.NET MVC Example ==
 
-Example of the server side page that can be implemented in the ASP.NET MVC using C# language is shown below:
 
 {{{
 public class HomeController : Controller
@@ -128,11 +127,11 @@ public class HomeController : Controller
 } 
 }}}
 
-Plugin should be initialized with sUpdateURL parameter with value /Home/!UpdateData in order to map request to the !UpdateData method of the !HomeController. You can download code example in the tutorial on the [http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable.aspx Code Project].
+The plugin should be initialized with sUpdateURL parameter with value /Home/!UpdateData in order to map the request to the !UpdateData method of the !HomeController. You can download the code example in the tutorial on the [http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable.aspx Code Project].
 
 == Java Example ==
 
-Example of the Java Servlet page that handles request is shown below:
+An example of a Java Servlet page that handles request is shown below:
 
 {{{
 
@@ -162,12 +161,12 @@ public class Home extends HttpServlet {
 
 }}}
 
-You can download code example in the tutorial on the [http://www.codeproject.com/KB/java/J2EE-Editable-Web-Table.aspx Code Project].
+You can download the code example in the tutorial on the [http://www.codeproject.com/KB/java/J2EE-Editable-Web-Table.aspx Code Project].
 = Summary =
-In the examples above it can be noticed that server-side pages looks same. They accepting parameters, update records and return back value that is edited. Interface is same in all implementations only difference is in the business logic code that updates the data.
+In the examples above it can be noticed that the server-side pages look very similar. They are accepting parameters, update records and return back the value that is edited. This interface is same in all implementations, the only difference is in the business logic code that updates the data.
 = See also =
-  * [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html Demo] - Live demo page. Note that edit action returns server error because google.code site do not allow POST request.
-  * [EditorSettings Editor settings] page to see how you can additionally configure editors parameters.
+  * [http://jquery-datatables-editable.googlecode.com/svn/trunk/index.html Demo] - Live demo page. Note that the edit action returns a server error because the google.code site does not allow POST requests.
+  * [EditorSettings Editor settings] a page to see how you can additionally configure editor parameters.
   * [CustomCellEditors Custom editors] and [NonStandardEditors non-standard editors] pages to see how you can use editor types other than text boxes.
   * [CellEditorValidation Adding validation in the cell editors] to see how you can implement validation of edited values.
   * [AddingNewRecords Adding new record] - How to implement adding new rows in the table,
