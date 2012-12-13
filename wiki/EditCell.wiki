@@ -7,18 +7,18 @@ More - [EditorSettings Advanced settings] [CustomCellEditors Custom editors] [Ce
 
 = Introduction =
 
-!DataTables Editable plugin enables user to edit the cells in the table. Updating cells is done by using inline editable plugin called [JEditable http://www.appelsiini.net/projects/jeditable]. !DataTables Editable plugin is internally configured to replace cell content with editable textbox when user double clicks on the cell. Following figure shows how user can edit data:
+The !DataTables Editable plugin allows the user to edit the cells in the table. The core of inline editing is  implemented in the[http://www.appelsiini.net/projects/jeditable JEditable plugin]. The !DataTables Editable plugin is internally configured to replace cell content with an editable textbox when the user double clicks on the cell. The following figure shows how user can edit data:
 
 http://www.codeproject.com/KB/aspnet/MVC-CRUD-DataTable/datatables_edit_cell.png
 
-When user finishes with editing AJAX call is sent to the server-side page that updates record.
+When the user finishes editing an AJAX call is sent to the server-side page that updates the record.
 
 = Client-side configuration =
 
-On the client-side (web page) minimal configuration is required. In the plugin initialization call should be set URL of the page that updates data on the server-side and plugin will handle all other operations (inline editing, sending AJAX request, error handling). Only requirement is that web page should be created according to the [HTMLSource guideline for the web page implementation]. 
+On the client-side (web page) minimal configuration is required. You need to provide the URL of the server-side update page during plugin initialization. The plugin will handle all other operations (inline editing, sending AJAX request, error handling). The only requirement is that the web page should be created according to the [HTMLSource guideline for the web page implementation]. 
 
 == Setting the server-side page used for update ==
-In the plugin initialization should be set parameter sUpdateURL which set the URL of the page that plugin should use for updating data. Example of call is shown below:
+Set the parameter sUpdateURL in the plugin initialization call, for example:
 
 {{{
 $('#myDataTable').dataTable().makeEditable({
@@ -26,8 +26,8 @@ $('#myDataTable').dataTable().makeEditable({
                 }); 
 }}}
 
-The AJAX call will be sent to the page /Home/!UpdateData.php when user finishes with editing of the cell.
-Instead of the URL function can be used as a target for posting values. This is shown in the example:
+The AJAX call will be sent to the page /Home/!UpdateData.php when the userhas finished editing the cell.
+Instead of the URL, a function can be used as a target for posting values. This is shown in the following example:
 
 {{{
 $('#myDataTable').dataTable().makeEditable({
@@ -38,7 +38,7 @@ $('#myDataTable').dataTable().makeEditable({
                 });
 }}}
 
-This function accepts value that is entered in the editor, and settings of the current editor. Function should return the same value that is posted - any other text will be shown as an error message.
+This function accepts the value that is entered in the editor, and the settings of the current editor. The function should return the same value that is posted - any other text will be shown as an error message.
 Use this option when you need to implement some custom processing of the value before it is sent using some custom AJAX call.
 
 == AJAX Request ==
